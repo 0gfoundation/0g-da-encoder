@@ -277,7 +277,7 @@ impl PartialEq for Poly {
             }
             _ => {
                 let self_inner = self.to_vec_extend(degree + 1);
-                let other_inner = self.to_vec_extend(degree + 1);
+                let other_inner = other.to_vec_extend(degree + 1);
                 self_inner == other_inner
             }
         }
