@@ -127,3 +127,23 @@ Run the following script for complete testing:
 ```sh
 ./dev_support/test.sh
 ```
+
+## Run in Docker
+- Prepare your working folder, i.e. [run](run)
+- Download params to your working folder
+    ```
+    cd run
+    ../dev-support/download_params.sh
+    ```
+
+- Prepare [config.toml](run/config.toml) in your working folder
+
+- Build docker image
+    ```
+    docker build -t 0g-da-encoder .
+    ```
+
+- Run docker container
+    ```
+    docker run -d -v <YOUR_WORKING_FOLDER>:/run --name <CONTAINER_NAME> --net=host 0g-da-encoder server --config config.toml
+    ```
